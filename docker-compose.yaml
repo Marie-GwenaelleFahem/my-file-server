@@ -1,0 +1,30 @@
+services:
+  vite_docker_2:
+    image: node:alpine
+    build:
+      context: ./file-sharing-backend
+      dockerfile: Dockerfile
+    container_name: vite_docker_2
+    ports:
+      - "5000:5000"
+    working_dir: /srv/app
+    volumes:
+      - ./file-sharing-backend:/app
+      - /app/node_modules
+    tty: true
+    command: 'sh -c "cd /app && npm i && npm run start"'
+
+  vite_docker:
+    image: node:alpine
+    build:
+      context: ./file-sharing-frontend
+      dockerfile: Dockerfile
+    container_name: vite_docker
+    ports:
+      - "9000:9000"
+    working_dir: /srv/app
+    volumes:
+      - ./file-sharing-frontend:/app
+      - /app/node_modules
+    tty: true
+    command: 'sh -c "cd /app && npm i && npm run dev"'
