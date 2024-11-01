@@ -44,9 +44,8 @@ docker compose down
 ## Le projet
 
 **Fonctionnalités**
-- Upload de fichiers : Permet aux utilisateurs d’uploader des fichiers tout  en respectant un quota maximum de 2 Go.
-- Vérification de quota : Le middleware quotaMiddleware.js s'assure que chaque utilisateur respecte son quota.
-CRUD des fichiers : Affichage, téléchargement et suppression de fichiers.
+- Upload de fichiers : Permet aux utilisateurs d’uploader des fichiers
+- Téléchargement du fichier uploadé : Permet aux utilisateurs de récupéré le fichier uploadé
 
 ## Contributeurs
 
